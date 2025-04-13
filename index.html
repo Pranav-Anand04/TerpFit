@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>TerpFit - Your Fitness Journey Starts Here</title>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">TerpFit</div>
+            <div class="nav-links">
+                <a href="#" id="dashboard-link" class="nav-link">Dashboard</a>
+                <a href="#" id="map-link" class="nav-link active">Map</a>
+                <a href="login.html" id="logout-link" class="nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <!-- Map View -->
+        <div id="map-view" class="view-container active">
+            <div class="sidebar">
+                <h1 class="sidebar-header">TerpFit</h1>
+                <div id="chatbot-container" class="chatbot-container">
+                    <div id="chat-messages" class="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Ask about workouts or log your exercise...">
+                        <button id="send-message">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="map-div">
+                <div id="map"></div>
+            </div>
+        </div>
+        
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="view-container">
+            <div class="dashboard-container">
+                <h1 class="dashboard-header">Your Fitness Dashboard</h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Total Workouts</h3>
+                        <p id="total-workouts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Calories Burned</h3>
+                        <p id="total-calories">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Workout Streak</h3>
+                        <p id="workout-streak">0 days</p>
+                    </div>
+                </div>
+                <div class="workout-history-container">
+                    <h2>Your Workout History</h2>
+                    <div id="workout-list" class="workout-list">
+                        <!-- Workout history will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Workout Detail View -->
+        <div id="workout-detail-view" class="view-container">
+            <div class="workout-detail-container">
+                <button id="back-to-dashboard" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <h1 id="workout-title" class="workout-detail-title">Workout Details</h1>
+                <div class="workout-detail-content">
+                    <div class="workout-info">
+                        <div class="info-item">
+                            <h3>Date & Time</h3>
+                            <p id="workout-date">Not available</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Location</h3>
+                            <p id="workout-location">Not available</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Duration</h3>
+                            <p id="workout-duration">Not available</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Calories Burned</h3>
+                            <p id="workout-calories">Not available</p>
+                        </div>
+                    </div>
+                    <div class="workout-exercises">
+                        <h2>Exercises/Notes</h2>
+                        <textarea id="workout-notes" placeholder="Add your exercises and notes here..."></textarea>
+                        <button id="save-notes" class="btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
